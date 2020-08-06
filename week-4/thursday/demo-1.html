@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hello Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      h1 {
+        margin: 10%;
+        border: 10px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Listening to keyup events, press any key</h2>
+    <h1 id="output"></h1>
+    <script>
+      const outH1 = document.getElementById("output");
+      document.addEventListener("keyup", fnToHandleEvent);
+
+      // reaction to a particular event
+      function fnToHandleEvent(event) {
+        outH1.textContent = outH1.textContent + event.code + " ";
+        console.log("You just pressed", event);
+        alert("You just pressed" + " " + event.code);
+      }
+    </script>
+  </body>
+</html>

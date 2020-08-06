@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hello Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      div {
+        margin: 10%;
+        border: 10px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="outH1">
+      <input id="log">
+        Hello
+      </input>
+      <h2 id="txtDiv">Pressed <br></h2>
+    </h1>
+    <script>
+      const outH1 = document.getElementById("outH1");
+      const txtDiv = document.getElementById("txtDiv");
+      
+      // just calling function
+      console.log('before just calling fn');
+      anyEventHandlingFn({ code: 'Dummy Key'});
+      console.log('just called fn');
+
+      outH1.addEventListener("keyup", anyEventHandlingFn);
+      
+      // reaction to the keyup event
+      function anyEventHandlingFn(event) {
+        txtDiv.textContent = txtDiv.textContent + event.code + "";
+        console.log("You just pressed", event.code);
+      }
+
+      
+      // event when you network connectivity is lost
+        window.onoffline = (event) => {
+            alert("The network connection has been lost.");
+            console.log(event)
+        };
+        
+        // event when you network connectivity is back 
+        window.ononline = (event) => {
+            alert("The network connection has been restored.");
+            console.log(event)
+        };
+        
+        console.log('This is the last line');
+    </script>
+  </body>
+</html>

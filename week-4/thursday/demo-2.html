@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hello Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      button {
+        padding: 20px;
+        margin: 20%;
+      }
+    </style>
+  </head>
+  <body style="background-color: black;">
+    <button>
+      Color Magic
+    </button>
+    <script>
+      const btn = document.querySelector("button");
+
+      // returns a random number - uses javascript standard library fn
+      function getRandomNum(number) {
+        return Math.floor(Math.random() * (number + 1));
+      }
+
+      // one way of adding event handlers
+      // btn.onclick = function () {
+      btn.onmouseover = function () {
+        const rndCol =
+          "rgba(" +
+          getRandomNum(255) +
+          "," +
+          getRandomNum(255) +
+          "," +
+          getRandomNum(255) +
+          "," +
+          getRandomNum(255) +
+          ")";
+        // rndCol = "rgba(0,35,56,34)";
+        alert(rndCol);
+        //
+        document.body.style.backgroundColor = rndCol;
+      };
+    </script>
+  </body>
+</html>
