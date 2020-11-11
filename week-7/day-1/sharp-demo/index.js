@@ -1,4 +1,9 @@
 const sharp = require('sharp');
+// NOT a core module
+// +
+// NOT a local module (./ is missing)
+// Hence considered as 3rd party package
+// Tries to find it in node_module
 
 sharp('assets/input-image.jpg')
   .rotate(90)
