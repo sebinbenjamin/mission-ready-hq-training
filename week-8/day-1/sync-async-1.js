@@ -8,7 +8,7 @@ setTimeout(() => console.log(5), 0);
 // Synchronous execution
 console.log(6);
 // Asynchronous execution
-setTimeout(() => console.log(7), 0);
+setTimeout(() => console.log(7), 3000);
 
 // Asynchronous execution
 console.log('Before setTimeout');

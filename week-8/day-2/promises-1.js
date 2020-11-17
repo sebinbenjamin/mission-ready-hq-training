@@ -5,16 +5,24 @@
  *
  */
 
-let promise = new Promise(function (resolve, reject) {
+let promise = new Promise((resolve, reject) => {
   // the function is executed automatically when the promise is constructed
-  // after 1 second signal that the job is done with the result "done"
-  setTimeout(() => resolve('done'), 1000);
+  // after 5 second signal that the job is done with the result "done"
+  setTimeout(() => resolve('done'), 5000);
 });
 
-let promise2 = new Promise(function (resolve, reject) {
-  // after 1 second signal that the job is finished with an error
-  setTimeout(() => reject(new Error('Whoops!')), 1000);
+let promise2 = new Promise((resolve, reject) => {
+  // after 5 second signal that the job is finished with an error
+  setTimeout(() => reject(new Error('Whoops!')), 3000);
 });
+
+promise2
+  .then((success) => {
+    console.log('Promise two is successful.', success);
+  })
+  .catch((error) => {
+    console.log('Promise two has failed.', error);
+  });
 
 /**
  * A Promise object is created that takes two functions; resolve() and reject().
@@ -23,13 +31,11 @@ let promise2 = new Promise(function (resolve, reject) {
  */
 const count = true;
 // To create a promise object, we use the Promise() constructor.
-const countValue = new Promise(function (resolve, reject) {
+const countValue = new Promise((resolve, reject) => {
   if (count) {
-    resolve('There is a count value.');
+    resolve('Count Promise: There is a count value.');
   } else {
-    reject('There is no count value');
+    reject('Count Promise: There is no count value');
   }
 });
 console.log(countValue);
-
-
