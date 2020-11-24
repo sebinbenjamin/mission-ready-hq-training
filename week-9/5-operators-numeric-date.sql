@@ -1,22 +1,23 @@
 SELECT
     MAX(LifeExpectancy)
 FROM
-    `world`.`country`;
+   mhq.country;
 
 SELECT 
     COUNT(DISTINCT Continent) 'No of Continents'
 FROM
-    `world`.`country`;
+   mhq.country;
     
-SELECT
-AVG(LifeExpectancy) 'Average World Life expectancy'
+SELECT 
+    AVG(LifeExpectancy) 'Average World Life expectancy'
 FROM
-    `world`.`country`;
+    mhq.country;
   
-SELECT DATE('2020-11-23T03:18:14.688Z');
+-- Current data and time could be useful for comparision, eg: returnning purchases from last friday to today
 SELECT curdate();
 select current_timestamp();
 
+SELECT DATE('2020-11-23T03:18:14.688Z');
 select dayname('2020-03-23T03:18:14.688Z');
 
 select dayofmonth('2020-03-23T03:18:14.688Z');

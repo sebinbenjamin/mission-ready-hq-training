@@ -1,21 +1,21 @@
 SELECT 
     *
 FROM
-    world.COUNTRY
+    mhq.country
 WHERE
     IndepYear BETWEEN 1990 AND 1994;
 
 SELECT 
     Name, IndepYear, GovernmentForm
 FROM
-    world.COUNTRY
+    mhq.country
 WHERE
     GovernmentForm IN ('Republic');
 
 SELECT 
     Name, IndepYear, GovernmentForm
 FROM
-    world.COUNTRY
+    mhq.country
 WHERE
     (IndepYear BETWEEN 1990 AND 1994)
         AND (GovernmentForm IN ('Republic'));
@@ -23,7 +23,7 @@ WHERE
 SELECT DISTINCT
     IndepYear
 FROM
-    world.COUNTRY
+    mhq.country
 WHERE
     (IndepYear BETWEEN 1900 AND 2000)
         AND (GovernmentForm IN ('Republic'));        
@@ -31,7 +31,7 @@ WHERE
 SELECT DISTINCT
     IndepYear, Region
 FROM
-    world.COUNTRY
+    mhq.country
 WHERE
     IndepYear BETWEEN 1900 AND 2000;
         
@@ -39,22 +39,22 @@ WHERE
 SELECT DISTINCT
     IndepYear, GovernmentForm
 FROM
-    world.COUNTRY
+    mhq.country
 WHERE
     GovernmentForm IN ('Republic' , 'Federal Republic');
     
--- Purpose of DISTINCT is defeated here, as atleast one column needs to be different. 
+-- Purpose of DISTINCT is defeated here, as atleast one column [a.k.a the Primary key] always has a different value. 
 SELECT DISTINCT
     *
 FROM
-    world.COUNTRY
+    mhq.country
 WHERE
     GovernmentForm IN ('Republic' , 'Federal Republic');
     
 SELECT DISTINCT
     Name, Continent, Region, Code
 FROM
-    world.country
+    mhq.country
 WHERE
     name LIKE 'Angola';
 
