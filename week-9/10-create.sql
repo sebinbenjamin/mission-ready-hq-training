@@ -1,5 +1,8 @@
 USE mhq;
 -- A PRIMARY KEY constraint automatically has UNIQUE & NOT NULL applied. 
+
+-- Error Code: 1050. Table 'mhqstudent' already exists
+-- Use IF NOT EXISTS to catch the error and continue the script 
 CREATE TABLE MHQStudent (
     ID 			INT 			PRIMARY KEY,
     LastName 	VARCHAR(255)	NOT NULL,
@@ -20,7 +23,8 @@ CREATE TABLE IF NOT EXISTS MHQStudentA (
     ID 			INT 			NOT NULL PRIMARY KEY,
     LastName 	VARCHAR(255) 	NOT NULL,
     FirstName 	VARCHAR(255),
-    Age			INT 			UNIQUE
+    Age			INT 			,
+    Email 		VARCHAR(255)	UNIQUE
 );
 -- Error Code: 1062. Duplicate entry '26' for key 'persons.Age'
 INSERT INTO `mhq`.`MHQStudentA`
@@ -29,14 +33,14 @@ INSERT INTO `mhq`.`MHQStudentA`
 `LastName`,
 `Age`)
 VALUES
-(8, 'Sebin','Benjamin', 26);
+(11, 'Sebin','Benjamin', 27);
 
 -- CHECK constraint is used to limit the value range that can be placed in a column
 CREATE TABLE IF NOT EXISTS MHQStudentB (
     ID 			INT NOT NULL PRIMARY KEY,
     LastName 	VARCHAR(255) NOT NULL,
     FirstName 	VARCHAR(255),
-    Age			INT UNIQUE CHECK (Age >= 18)
+    Age			INT CHECK (Age >= 18)
 );
 -- Error Code: 3819. Check constraint 'persons_chk_1' is violated.
 INSERT INTO `mhq`.`MHQStudentB`
@@ -54,7 +58,7 @@ CREATE TABLE IF NOT EXISTS MHQStudentC (
     FirstName	VARCHAR(255),
     Age 		INT				UNIQUE CHECK (Age >= 18),
     Course 		VARCHAR(255) 	DEFAULT 'Full Stack Development',
-    Created_at 	TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP
+    Created_at 	TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP()
 );
 -- Default value of 'Full Stack Development' inserted for the column course 
 -- And CURRENT_TIMESTAMP inserted for Created_at column
@@ -64,11 +68,11 @@ INSERT INTO `mhq`.`MHQStudentC`
 `Age`
 )
 VALUES
-(11,'Benjamin', 78);
+(17,'Doe3e', 20);
 
 -- Auto-increment generats unique number automatically for the column on insertion.
 CREATE TABLE IF NOT EXISTS MHQStudentD (
-    ID 			INT 			AUTO_INCREMENT KEY,
+    ID 			INT 			AUTO_INCREMENT PRIMARY KEY,
     LastName 	VARCHAR(10) 	NOT NULL,
     FirstName	VARCHAR(255)
 );

@@ -6,22 +6,23 @@ CREATE TABLE IF NOT EXISTS MHQStudentE (
 
 -- Single row insertion 
 INSERT INTO `mhq`.`MHQStudentE`
-(`LastName`,
-`FirstName`
+(`FirstName`,
+`LastName`
 )
 VALUES
-('Benjamin', 'Sebin');
+('Sebin', 'Benjamin');
 
+SELECT * FROM MHQStudentE;
 -- Inserting multiple rows
 INSERT INTO `mhq`.`MHQStudentE`
 (`LastName`,
 `FirstName`
 )
 VALUES
-('Benjamin', 'Sebin'),
-('Benjamin', 'Sebin'),
-('Benjamin', 'Sebin'),
-('Benjamin', 'Sebin')
+('John', 'Cicla'),
+('Doe', 'John'),
+('Doe', 'Jane'),
+('Kom', 'Mary')
 ;
 
 SELECT * FROM MHQStudentE;
