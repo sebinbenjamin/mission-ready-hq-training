@@ -5,8 +5,11 @@
  * Error handling in synchronous methods need to be implemented using Try - Catch blocks
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
  *
- * The error object is a built-in object that provides a standard set of useful information when an error occurs, such as a stack trace and the error message.
- *      error.stack  - shows you where an error came from, as well as a list of the function calls that preceded it - for your convenience
+ * The error object is a built-in object that provides a standard set of useful information when an error occurs, such as 
+ *    1. A stack trace      - error.stack
+ *    2. the error message  - error.message
+ * 
+ *  error.stack  - shows you where an error came from, as well as a list of the function calls that preceded it - for your convenience
  *
  */
 
