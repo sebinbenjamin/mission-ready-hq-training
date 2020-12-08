@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -24,6 +25,6 @@ function App() {
 
 export const sum = (a, b) => {
   return a + b;
-}
+};
 
 export default App;
