@@ -17,7 +17,7 @@ const http = require('http');
 const fs = require('fs'); // importing the file system module
 
 const server = http.createServer((request, response) => {
-  const file_contents = fs.readFileSync('./hello-filesystem-modul.txt', "utf-8");
+  const file_contents = fs.readFileSync('./hello-filesystem-module.txt', "utf-8");
   console.log('The file contains *******', file_contents);
 
   response.setHeader('Content-Type', 'text/plain');

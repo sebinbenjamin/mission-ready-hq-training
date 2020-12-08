@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+
+}
+
+.card {
+  border-style: solid;
+  border-width: 1px;
+  padding: 5vmin;
+  margin: 5vmin;
+}

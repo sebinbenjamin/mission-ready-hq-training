@@ -21,6 +21,7 @@ const server = http.createServer((req, res) => {
       res.statusCode = 200;
       res.end(data);
     } else {
+      // Handle the error scenario here.
       console.log('Unable to read file', err.message);
       res.statusCode = 500;
       res.end(err.message);

@@ -11,11 +11,24 @@ const fs = require('fs');
 
 const server = http.createServer((req, res) => {
   console.log('Before Reading file');
-  fs.readFile('./pathParams.js', 'utf8', (err, data) => {
-    res.setHeader('Content-Type', 'text/javascript');
-    res.statusCode = 200;
-    res.end(data);
-  });
+  /**
+   * fs.readFile(file, [encoding], [callback]);
+   * 3 arguments for readFile
+   *    file            - name of the file to be read
+   *    encoding         - character encoding used to save the file.
+   *    callback function - function that is called when the read operation is completed. 
+   *                      - It takes at least 1 parameter, first one being the error object 
+   */
+  fs.readFile('./pathParams.js', 'utf8', 
+            // 1 - error object
+            // 2 - the result of the operation done by the method
+            (err, file_contents) => {
+              res.setHeader('Content-Type', 'text/javascript');
+              res.statusCode = 200;
+              res.end(file_contents);
+            }
+  );
+
   console.log('After Read Method');
 });
 
