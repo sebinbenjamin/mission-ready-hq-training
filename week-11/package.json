@@ -1,16 +1,14 @@
 {
-  "name": "mysql2-demo",
+  "name": "week-11",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "hello-express.js",
   "scripts": {
-    "start": "node index-1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Sebin Benjamin",
   "license": "ISC",
   "dependencies": {
-    "mysql2": "^2.2.5"
+    "express": "^4.17.1"
   }
 }
