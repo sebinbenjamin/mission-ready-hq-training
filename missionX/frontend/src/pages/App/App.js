@@ -1,6 +1,7 @@
 import logo from 'assets/images/logo.svg';
 import Button from 'components/Button';
 import './App.css';
+import { MAX_AGE } from 'constants'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React {MAX_AGE}
         </a>
         <Button></Button>
       </header>
