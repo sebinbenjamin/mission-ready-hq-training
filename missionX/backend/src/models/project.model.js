@@ -1,5 +1,4 @@
 const { getPool } = require('../db');
-
 const pool = getPool();
 
 const getAllProjects = (countryCode) => {
