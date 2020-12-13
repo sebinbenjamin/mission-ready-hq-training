@@ -10,3 +10,7 @@ week-8/day-2/email-demo/node_modules/
 week-8/day-3/file-upload/node_modules/
 
 missionX/frontend/.eslintcache
+
+missionX/backend/src/.env
+
+missionX/backend/.env

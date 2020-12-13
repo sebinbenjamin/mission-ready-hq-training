@@ -17,3 +17,8 @@ We have the following structure currently.
 |  |-utils
 |  |-models
 |
+
+## References
+https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf
+
+https://dev.to/juliest88/how-to-build-rest-api-with-nodejs-express-and-mysql-31jk
