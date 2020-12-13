@@ -2,15 +2,25 @@ const mysql = require('mysql2/promise');
 const { config } = require('../config/db.config');
 
 let pool = null;
+let isConnected = false;
 
-const getConnection = async () => {
+const connect = async () => {
   const poolConfig = {
     ...config,
     connectionLimit: 3,
     queueLimit: 5,
   };
   pool = await mysql.createPool(poolConfig);
+  isConnected = true;
   setListeners(pool);
+};
+
+const getPool = async () => {
+  // Go through an infinite loop until connected :( 
+  while (!isConnected) {
+    await new Promise((_) => setTimeout(_, 2000));
+  }
+  if (isConnected) return pool;
 };
 
 const setListeners = (pool) => {
@@ -25,9 +35,9 @@ const setListeners = (pool) => {
   });
 
   // Called after all release activity has been performed on the connection
-  pool.on('release', function (connection) {
+  pool.on('release', (connection) => {
     console.log('Connection %d released', connection.threadId);
   });
 };
 
-module.exports = { getConnection, connection: pool };
+module.exports = { connect, getPool };

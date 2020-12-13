@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const { port } = require('./config');
 
-const { getConnection: getDBConnection } = require('./db');
+const { connect } = require('./db');
 const { errorHandler, simpleLogger } = require('./middlewares');
 const projectRouter = require('./routes/project.routes');
 const userRouter = require('./routes/user.routes');
@@ -34,7 +34,7 @@ app.use(errorHandler);
 // Starting the server after connecting to DB
 const startServer = async () => {
   try {
-    await getDBConnection();
+    await connect();
     app.listen(port, () => console.log(`🚀 Server running on port ${port}!`));
   } catch (e) {
     console.error(e);
@@ -42,5 +42,3 @@ const startServer = async () => {
 };
 
 startServer();
-
-// https://codeburst.io/better-error-handling-in-express-js-b118fc29e9c7

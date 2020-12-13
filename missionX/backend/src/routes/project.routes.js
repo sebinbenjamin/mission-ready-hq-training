@@ -3,13 +3,13 @@ const { get, getOne, update } = require('../controllers/project.controller');
 
 const router = Router();
 
-// GET /api/projects/
+// GET /api/project + /
 router.get('/', get);
 
-// GET /api/projects/:id/
-router.get('/:id', getOne);
-
-// PATCH /api/projects/ 
+// PATCH /api/project + /
 router.patch('/', update);
+
+// GET /api/project/ + :id/
+router.get('/:id', getOne);
 
 module.exports = router;
