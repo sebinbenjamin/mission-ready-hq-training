@@ -1,6 +1,9 @@
 {
   "name": "mission-x",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "Mission-X project sample backend structure",
   "main": "server.js",
   "scripts": {
