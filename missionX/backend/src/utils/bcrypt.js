@@ -11,6 +11,7 @@ const getSaltedHash = (password) => {
   }
 };
 
+// Compares the password sent in the login API and the one in the database 
 const checkPassword = (password, hash) => {
   return bcrypt.compareSync(password, hash);
 };

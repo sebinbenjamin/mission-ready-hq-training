@@ -2,6 +2,7 @@ const express = require('express');
 
 // Loads environment variables from a '.env' file stored in the project root
 // and makes it available in 'process.env' object
+// https://www.npmjs.com/package/dotenv
 require('dotenv').config();
 
 const { port } = require('./config');
