@@ -7,9 +7,7 @@ const getAllProjects = (countryCode) => {
 
   return pool.then(async (connection) => {
     // Rows and fields are returned, we take only rows now.
-    const [
-      rows,
-    ] = await connection.execute(
+    const [rows,] = await connection.execute(
       'SELECT * FROM demo.countryLanguage where CountryCode = ?;',
       [countryCode],
     );
