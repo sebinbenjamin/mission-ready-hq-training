@@ -1,0 +1,6 @@
+[submodule "missionX/missionX-backend"]
+	path = missionX/missionX-backend
+	url = https://github.com/sebinbenjamin/missionX-backend.git
+[submodule "missionX/missionX-frontend"]
+	path = missionX/missionX-frontend
+	url = https://github.com/sebinbenjamin/missionX-frontend.git
