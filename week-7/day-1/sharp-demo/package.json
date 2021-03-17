@@ -1,7 +1,7 @@
 {
   "name": "sharp-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project demonstrates the power of javascript. Sharp library is used to work on imagees etcetc",
   "main": "index.js",
   "author": "Sebin Benjamin",
   "license": "ISC",
@@ -10,6 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "sharp": "^0.26.2"
+    "sharp": "^0.24.1"
   }
 }
