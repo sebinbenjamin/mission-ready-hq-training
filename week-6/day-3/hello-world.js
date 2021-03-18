@@ -4,8 +4,10 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   console.log('Got a request !');
   res.statusCode = 200;
+  // we (the server) are sending you (client/browser) an html content as a response
   res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Content-Language', 'de-CA');
+
+  res.setHeader('Content-Language', 'es-CA');
   // res.setHeader('Content-Language', 'en-US')
   
   // sent the Hello world response

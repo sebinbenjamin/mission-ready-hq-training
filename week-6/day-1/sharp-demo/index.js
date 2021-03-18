@@ -1,3 +1,8 @@
+// const sharp = require('./node_modules/sharp');
+//node appends a ./node_modules/ to whatever we pass without a ./
+//  ./node_modules/ + sharp ==> ./node_modules/sharp
+//    ../node_modules/sharp
+//    ../../node_modules/sharp
 const sharp = require('sharp');
 // NOT a core module
 // +
