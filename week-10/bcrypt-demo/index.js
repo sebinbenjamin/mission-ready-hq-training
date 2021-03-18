@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 // genSaltSync - Generates the salt value used for hashing
 // Salt adds randomness to our password hash to prevent the rainbow Table attacks
 const salt = bcrypt.genSaltSync(5);
+console.log('Random salt generated', salt);
 const myPlaintextPassword = 'Hello World !';
 
 // hashSync - converts the plain password into a hashed value
