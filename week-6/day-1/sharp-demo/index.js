@@ -1,4 +1,5 @@
 // const sharp = require('./node_modules/sharp');
+// * Module resolution 
 //node appends a ./node_modules/ to whatever we pass without a ./
 //  ./node_modules/ + sharp ==> ./node_modules/sharp
 //    ../node_modules/sharp

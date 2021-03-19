@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Fake frontend API calling page</title>
+  <script src="api-call.js"></script>
+  <style>
+    div {
+      border: blue 2px solid;
+      margin-bottom:20px;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="getACarFromMyBackend()">Get me a CARRRR</button>
+  <h1>API result of 1st API call</h1>
+  <div id="content1"></div>
+
+  <button onclick="getABaloonFromMyBackend()">Get me a Baloon</button>
+  <h1>API result of 2nd API call</h1>
+  <div id="content2"></div>
+</body>
+
+</html>
