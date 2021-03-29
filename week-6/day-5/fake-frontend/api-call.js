@@ -10,9 +10,22 @@ const getABaloonFromMyBackend = () => {
 
   // calls the API with the url 'requestURL2'
   // once we get the response then do something with it
+  // * CONSUMER of the promise returned by the Fetch API
   fetch(requestURL2)
     .then(response => response.text())
     .then(data => putDataIntoPage(data, 'content2')
+    );
+};
+
+const getFileContentFromMyBackend = () => {
+  const requestURL3 = 'http://localhost:3000';
+
+  // calls the API with the url 'requestURL2'
+  // once we get the response then do something with it
+  // * CONSUMER of the promise returned by the Fetch API
+  fetch(requestURL3)
+    .then(response => response.text())
+    .then(data => putDataIntoPage(data, 'content3')
     );
 };
 

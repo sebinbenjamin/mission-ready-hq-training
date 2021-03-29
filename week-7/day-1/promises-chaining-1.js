@@ -7,15 +7,20 @@
 
 // returns a promise, stored to countValue
 const countValue = new Promise((resolve, reject) => {
-  resolve('Promise resolved');
+  setTimeout(() => resolve('Promise 1 resolved after 2 sec'), 2000);
 });
 
 // then() is executed when promise is resolved successfully
+// * Consumer of countValue Promise
 countValue
-  .then((result) => {
-    console.log(result);
+  .then((result1) => {
+    console.log('CONSUMER Promise 1:', result1);
+    return new Promise((res, rej) =>
+      setTimeout(() => res('Promise 2 success after 5 sec:'), 5000)
+    );
   })
-  .then(() => {
+  .then((result2) => {
+    console.log('CONSUMER Promise 2', result2);
     console.log('You can call multiple functions this way.');
   })
   // catch() method is used with the callback when the promise is rejected or if an error occurs.

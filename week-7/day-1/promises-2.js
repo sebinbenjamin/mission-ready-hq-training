@@ -4,24 +4,35 @@
  * In effect, a promise that a result of some kind will be returned at some point in the future
  *
  */
-
-let promise = new Promise((resolve, reject) => {
+//* EXECUTOR - promise1
+let promise1 = new Promise((resolve, reject) => {
   // the function is executed automatically when the promise is constructed
   // after 5 second signal that the job is done with the result "done"
-  setTimeout(() => resolve('done'), 5000);
+  setTimeout(() => resolve('done'), 5 * 1000);
 });
 
+// * EXECUTOR - promise2
 let promise2 = new Promise((resolve, reject) => {
   // after 5 second signal that the job is finished with an error
-  setTimeout(() => reject(new Error('Whoops!')), 3000);
+  setTimeout(() => reject(new Error('Whoops!')), 3 * 1000);
 });
 
-promise2
-  .then((success) => {
+//* CONSUMER - promise1
+promise1
+.then((success) => {
+  console.log('Promise one is successful.', success);
+})
+.catch((error) => {
+  console.log('Promise one has failed.', error);
+});
+
+
+//* CONSUMER - promise2
+  promise2.then((success) => {
     console.log('Promise two is successful.', success);
   })
-  .catch((error) => {
-    console.log('Promise two has failed.', error);
+  .catch((err) => {
+    console.log('Promise two has failed.', err);
   });
 
 /**
