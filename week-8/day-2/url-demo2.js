@@ -12,9 +12,10 @@ const server = http.createServer((req, res) => {
 
   // This is an endpoint to the get the users
   if (method === 'GET' && url === '/users') {
+    res.setHeader('Content-Type', 'application/json');
     console.log('Got a good GET request to /users', { method, url });
     res.statusCode = 200;
-    res.end('<h1 style="color:red">Here are some users !</h1>');
+    res.end(`{ "userList" : ["user1","user22","user23"]}`);
   // This is an endpoint to the get the cars
   } else if (method === 'GET' && url === '/cars') {
     console.log('Got a good GET request to /cars', { method, url });
@@ -27,7 +28,7 @@ const server = http.createServer((req, res) => {
   } else {
     console.log('Got a bad request', { method, url });
     res.statusCode = 400;
-    res.end();
+    res.end('Bad Request');
   }
 });
 

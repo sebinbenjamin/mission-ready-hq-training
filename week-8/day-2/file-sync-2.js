@@ -25,7 +25,8 @@ const server = http.createServer((req, res) => {
     res.end(data);
   } catch (err) {
     console.log('Unable to read file', err.message);
-    res.statusCode = 500;
+    res.setHeader('Content-Type', 'text/plain');
+    res.statusCode = 500;    
     res.end(err.message);
   }
 });

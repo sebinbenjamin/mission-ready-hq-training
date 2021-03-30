@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-fs.rename('./pathParamsRenamed.js', './pathParams.js', (err) => {
+fs.rename('./hello-renamed.js', './hello.txt', (err) => {
   if (!err) {
     console.log('Renaming successful');
   } else {
