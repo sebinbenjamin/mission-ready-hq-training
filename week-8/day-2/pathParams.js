@@ -17,7 +17,9 @@ const server = http.createServer((req, res) => {
   const { url } = req;
   console.log('URL', url);
   
+  // /cars/sedan/bmw/1 => split whenever there is a /. ['cars','sedan','','bmw','1','']
   // const pathParams_WithSpaces = url.split('/');
+  // /cars/sedan/bmw/1 => split whenever there is a /. ['cars','sedan','bmw','1']
   // const pathParams = pathParams_WithSpaces.filter((path) => path != '');
   const pathParams = url.split('/').filter((path) => path != '');
   console.log('pathParams', pathParams);

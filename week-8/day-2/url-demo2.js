@@ -2,14 +2,13 @@ const http = require('http');
 
 // Defining the behaviour of the server
 const server = http.createServer((req, res) => {
-  const { method, url, headers } = req;
-  const userAgent = headers['user-agent'];
+  const { method, url } = req;
+  // const userAgent = headers['user-agent'];
 
   console.log('Got a request !');
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Content-Language', 'en-US');
-  // res.setHeader('Content-Language', 'de-CA');
-
+  // res.setHeader('Content-Type', 'text/html');
+  // res.setHeader('Content-Language', 'en-US');
+  // // res.setHeader('Content-Language', 'de-CA');
   // This is an endpoint to the get the users
   if (method === 'GET' && url === '/users') {
     res.setHeader('Content-Type', 'application/json');

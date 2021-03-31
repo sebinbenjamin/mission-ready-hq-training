@@ -16,6 +16,7 @@ const fs = require('fs');
 const server = http.createServer((req, res) => {
   fs.readFile('./pathParamsss.js', 'utf8', (err, data) => {
     if (!err) {
+      // No error ie err is 'undefined' => Read operation was successful
       console.log('The file read contains', data);
       res.setHeader('Content-Type', 'text/javascript');
       res.statusCode = 200;

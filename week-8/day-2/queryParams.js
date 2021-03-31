@@ -1,7 +1,7 @@
 /**
  * The standard format of query parameters in a URL is
  *
- *   https://mywebapp.com/some/path?key1=value1&key2=value2&key3=value3
+ *   https://mywebapp.com/some/path?key1=value1&key2=value2&key3=value3&someKey4=someValue
  *
  * The first query string’s key is always preceded by a ?, and followed by a =, which is followed by the value.
  * A ? is used to denote the end of the path (including any path parameters), and the start of query strings.
@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
   // queryParams =>  type=sedan&color=My%20fav%20color%20is%20blue
 
   const queryStrings = queryStringModule.parse(queryParams);
-  // type=sedan&color=My fav color is blue is turned into a 
+  // "type=sedan&color=My fav color is blue" is turned into a 
   // queryStrings Object => 
   //                       {
   //                         type: 'sedan',
@@ -56,4 +56,9 @@ server.listen(port, () => {
   console.log(`Server running at port ${port}`);
 });
 
-// https://www.google.com/search?q=how+are+you
+/**
+ * Example for query Parameters
+ * https://www.google.com/search?q=how+is+the+weather+in+auckland+today
+ * Key => "q"
+ * Value => "how+is+the+weather+in+auckland+today"
+ *  */ 

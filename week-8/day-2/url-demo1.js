@@ -7,6 +7,7 @@ const server = http.createServer((req, res) => {
   console.log('Received request to endpoint', url);
 
   res.statusCode = 200;
+  res.setHeader('Content-Type','text/html');
   res.end(`
       <h1 style="color:red">Here is the url called: 
       </h1>

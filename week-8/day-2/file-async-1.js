@@ -20,9 +20,9 @@ const server = http.createServer((req, res) => {
    *                      - It takes at least 1 parameter, first one being the error object 
    */
   fs.readFile('./pathParams.js', 'utf8', 
-            // 1 - error object
-            // 2 - the result of the operation done by the method
-            (err, file_contents) => {
+  (err, file_contents) => {
+              // 1 - error object
+              // 2 - the result of the operation done by the method
               res.setHeader('Content-Type', 'text/javascript');
               res.statusCode = 200;
               res.end(file_contents);

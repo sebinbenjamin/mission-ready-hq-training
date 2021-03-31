@@ -18,25 +18,27 @@ const fs = require('fs'); // importing the file system module
 
 const server = http.createServer((request, response) => {
   const file_contents = fs.readFileSync(
-    './hello-filesystem-module.txt',
+    './hello-filesystem-modules.txt',
     'utf-8'
   );
   console.log('The file contains: ', file_contents);
 
   // response.setHeader('Content-Type', 'application/json');
-  // response.setHeader('Content-Type', 'text/html');
-  response.setHeader('Content-Type', 'text/plain');
+  response.setHeader('Content-Type', 'text/html');
+  // response.setHeader('Content-Type', 'text/plain');
 
   // Allows CORS request
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.statusCode = 200;
   
   // Sending back the file contents as the response to the HTTP request.
-  response.end(file_contents);  // => text/plain
+  // response.end(file_contents);  // => text/plain
   // response.end(`{ "someKey" : "someValue" }`); // => application/json
-  // response.end(`  <h1 style="color:red">Heres a car for you 
-  // <img src="https://toy-content.imgix.net/product/siku-1598nz-police-car-2~1581385230.jpg?w=310&h=310&fit=fill&fm=jpg&bg=0FFF&s=6728508bd0df5747d04dd52d31df61cb">
-  // </h1>`); // => text/html
+  response.end(`  
+  <h1 style="color:red">Heres a car for you 
+  </h1>
+  <img src="https://toy-content.imgix.net/product/siku-1598nz-police-car-2~1581385230.jpg?w=310&h=310&fit=fill&fm=jpg&bg=0FFF&s=6728508bd0df5747d04dd52d31df61cb">
+  `); // => text/html
 });
 
 const port = 3000;
