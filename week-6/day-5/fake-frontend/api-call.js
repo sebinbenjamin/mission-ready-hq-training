@@ -1,37 +1,35 @@
 const getACarFromMyBackend = () => {
-const requestURL1 = 'http://localhost:8080/car';
+  const requestURL1 = 'http://localhost:3000/car';
   fetch(requestURL1)
-    .then(response => response.text())
-    .then(data => putDataIntoPage(data, 'content1'));
+    .then((response) => response.text())
+    .then((data) => putDataIntoPage(data, 'content1'));
 };
 
 const getABaloonFromMyBackend = () => {
-  const requestURL2 = 'http://localhost:8080/baloon';
+  const requestURL2 = 'http://localhost:3000/ballon';
 
   // calls the API with the url 'requestURL2'
   // once we get the response then do something with it
   // * CONSUMER of the promise returned by the Fetch API
   fetch(requestURL2)
-    .then(response => response.text())
-    .then(data => putDataIntoPage(data, 'content2')
-    );
+    .then((response) => response.text())
+    .then((data) => putDataIntoPage(data, 'content2'));
 };
 
-const getFileContentFromMyBackend = () => {
+const getFileContentFromMyBackend = (methodOfRequest) => {
   const requestURL3 = 'http://localhost:3000';
 
   // calls the API with the url 'requestURL2'
   // once we get the response then do something with it
   // * CONSUMER of the promise returned by the Fetch API
-  fetch(requestURL3)
-    .then(response => response.text())
-    .then(data => putDataIntoPage(data, 'content3')
-    );
+  fetch(requestURL3, { method: methodOfRequest })
+    .then((response) => response.text())
+    .then((data) => putDataIntoPage(data, 'content3'));
 };
 
 /**
- * This method is used to insert the given data into a HTML element having the provided ID. 
- * 
+ * This method is used to insert the given data into a HTML element having the provided ID.
+ *
  * @param {*} data  The response from the API that is to be put into the page
  * @param {*} id The id of the HTML element that you wish to put the data into
  */

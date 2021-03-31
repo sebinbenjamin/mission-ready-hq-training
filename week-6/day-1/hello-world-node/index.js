@@ -1,8 +1,5 @@
 const http = require('http');
 
-const hostname = '127.0.0.1';
-const port = 3000;
-
 // callback fn - gets executed on every request to server.
 const serverHandler = (req, res) => {
   res.statusCode = 200;
@@ -12,6 +9,7 @@ const serverHandler = (req, res) => {
 
 const server = http.createServer(serverHandler);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server running at port ${port}/`);
 });
