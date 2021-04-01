@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Registration page</title>
+  <script>
+    const submitForm = () => {
+      const requestURL1 = 'http://localhost:3000/register';
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const formData = {
+        username: username,
+        password: password,
+      };
+      console.log(formData);
+
+      fetch(requestURL1, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Accept': '*',
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => response.text())
+        .then((result) => alert(result));
+    };
+  </script>
+  <style>
+    form {
+      border: blue 2px solid;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Registration Form</h1>
+  <form action="submit" method="post">
+    Username <input type="text" name="username" id="username" placeholder="Your preferred user name">
+    <br>
+    <br>
+    Password <input type="password" name="password" id="password" placeholder="A secret password">
+  </form>
+  <button onclick="submitForm()">Register</button>
+</body>
+
+</html>
