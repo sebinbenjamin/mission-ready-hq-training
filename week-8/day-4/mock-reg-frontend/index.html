@@ -5,7 +5,8 @@
   <title>Registration page</title>
   <script>
     const submitForm = () => {
-      const requestURL1 = 'http://localhost:3000/register';
+      // requestURL1 is wherever our backend is runnning.
+      const requestURL1 = 'http://localhost:5000/register';
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
       const formData = {
@@ -23,7 +24,15 @@
         },
       })
         .then((response) => response.text())
-        .then((result) => alert(result));
+        .then((result) => {
+          if (result === 'Sorry Sebin, you already have an acoount. Please go to the login page') {
+            alert('Please login. You have already registered.');
+            window.location.replace('https://www.google.com');
+          }
+          else {
+            alert(result);
+          }
+        });
     };
   </script>
   <style>

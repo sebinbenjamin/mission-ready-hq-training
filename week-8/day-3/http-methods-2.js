@@ -11,27 +11,31 @@ app.use(cors());
     Request is the HTTP request. It gives us all the request information, including the request parameters, the headers, the body of the request, and more.
     Response is the HTTP response object that we’ll send to the client.
 **/ 
-app.get('/', (req, res) => {
+app.get('/hello', (req, res) => {
   console.log('GET called');
   res.send('Hello GET !');
 });
 
-app.post('/', (req, res) => {
+app.post('/hello', (req, res) => {
   console.log('POST called');
-  res.send('Hello POST !');
+  // Express automatically sets the content type header as JSON 
+  res.send({
+    name: 'Sebin',
+    role: 'Developer'
+  });
 });
 
-app.put('/', (req, res) => {
+app.put('/hello', (req, res) => {
   console.log('PUT called');
   res.send('Hello PUT !');
 });
 
-app.delete('/', (req, res) => {
+app.delete('/hello', (req, res) => {
   console.log('DELETE called');
   res.send('Hello DELETE !');
 });
 
-app.patch('/', (req, res) => {
+app.patch('/hello', (req, res) => {
   console.log('PATCH called');
   res.send('Hello PATCH !');
 });
