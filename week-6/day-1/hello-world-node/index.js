@@ -4,7 +4,8 @@ const http = require('http');
 const serverHandler = (req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.end('API response, ie, Server says Hello World');
 };
 
 const server = http.createServer(serverHandler);

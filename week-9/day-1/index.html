@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:3000", requestOptions)
+      .then(response => response.text())
+      .then(result => alert(result))
+      .catch(error => console.log('error', error));
+  </script>
+</head>
+
+<body>
+This is the frontend
+</body>
+
+</html>

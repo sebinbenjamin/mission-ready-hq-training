@@ -1,6 +1,6 @@
 // npm install express cors
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 
 // Instantiate an application by calling the express() method
 const app = express();
@@ -13,14 +13,20 @@ app.use(express.json());
 app.post('/register', (req, res) => {
   // The data sent by the client.
   const { body } = req;
-  console.log('body',body);
-  if(body.username === 'Sebin'){
-    res.status(409).send('Sorry Sebin, you already have an acoount. Please go to the login page')
+  console.log('body', body);
+  console.log('You have a user registered with the name', body.username);
+  if (body.username === 'Sebin') {
+    res
+      .status(409)
+      .send(
+        'Sorry Sebin, you already have an acoount. Please go to the login page'
+      );
+  } else {
+    res.send(
+      `✔️ SUCCESS ✨✨✨ : You have registered a user with the name ${body.username}`
+    );
   }
-  else {
-    res.send(`✔️ SUCCESS ✨✨✨ : You have registered a user with the name ${body.username}`);
-  }
-  });
+});
 
 const port = 5000;
 app.listen(port, () => console.log(`Server running at port ${port}`));
