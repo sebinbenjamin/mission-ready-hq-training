@@ -1,5 +1,9 @@
+-- Upper and Lower => change casess
+
 SELECT UPPER('Lowercase fun') AS 'In Upper';
 SELECT LOWER('SQL Tutorial is FUN!') 'In Lower';
+SELECT UPPER('this needs to be capitalized');
+SELECT UPPER('this needs to be capitalized') AS 'Ideal Column name';
 SELECT UPPER('Lowercase fun') AS 'In Upper', LOWER('SQL Tutorial is FUN!') 'In Lower'; 
 
 -- TRIM removes leading and traliing whitspaces and newline characters

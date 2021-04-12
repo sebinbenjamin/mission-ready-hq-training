@@ -4,6 +4,11 @@ FROM
    mhq.country;
 
 SELECT 
+    COUNT(Continent) 'No of Continents'
+FROM
+   mhq.country;
+
+SELECT 
     COUNT(DISTINCT Continent) 'No of Continents'
 FROM
    mhq.country;
