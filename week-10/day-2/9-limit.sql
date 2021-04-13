@@ -1,20 +1,20 @@
 SELECT 
     *
 FROM
-    mhq.city;
+    world.city;
 
 -- Show the first 7 results. Unpredictable results as no ORDER BY clause is used
 SELECT 
     *
 FROM
-    mhq.city
+    world.city
 LIMIT 7;
 
 -- Show the first 7 results. Unpredictable results as no ORDER BY clause is used
 SELECT 
     *
 FROM
-    mhq.city
+    world.city
 WHERE Name LIKE 'Kab%'
 LIMIT 7;
 
@@ -22,7 +22,7 @@ LIMIT 7;
 SELECT 
     *
 FROM
-    mhq.country
+    world.country
 WHERE Region LIKE 'A%'
 ORDER BY Name
 LIMIT 5;
@@ -31,16 +31,30 @@ LIMIT 5;
 SELECT 
     *
 FROM
-    mhq.country
+    world.country
 WHERE Region LIKE 'A%'
 ORDER BY Name
 LIMIT 3;
+
+SELECT 
+    *
+FROM
+    world.country
+ORDER BY Name
+LIMIT 5 OFFSET 1;
+
+SELECT 
+    *
+FROM
+    world.country
+ORDER BY Name
+LIMIT 1 , 5;
 
 -- Show the first 3 results
 SELECT 
     *
 FROM
-    mhq.country
+    world.country
 WHERE
     Region LIKE 'A%'
 ORDER BY Name
@@ -51,7 +65,7 @@ LIMIT 0 , 3;
 SELECT 
     *
 FROM
-    mhq.country
+    world.country
 WHERE
     Region LIKE 'A%'
 ORDER BY Name
@@ -61,7 +75,7 @@ LIMIT 3 , 3;
 SELECT 
     *
 FROM
-    mhq.country
+    world.country
 WHERE
     Region LIKE 'A%'
 ORDER BY Name

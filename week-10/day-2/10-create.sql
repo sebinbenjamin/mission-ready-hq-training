@@ -53,7 +53,7 @@ VALUES
 
 -- DEFAULT constraint is used to provide a default value for a column. 
 CREATE TABLE IF NOT EXISTS MHQStudentC (
-    ID 			INT 			NOT NULL PRIMARY KEY,
+    ID 			INT 			PRIMARY KEY,
     LastName 	VARCHAR(10) 	NOT NULL,
     FirstName	VARCHAR(255),
     Age 		INT				UNIQUE CHECK (Age >= 18),
