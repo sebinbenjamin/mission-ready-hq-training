@@ -4,30 +4,34 @@ CREATE TABLE IF NOT EXISTS MHQStudentF (
     FirstName	VARCHAR(255)
 );
 
-INSERT INTO `mhq`.`mhqstudentf`
+INSERT INTO `mhq`.`MHQStudentF`
 (`LastName`,
 `FirstName`)
 VALUES
 ('Bee', 'Sebin');
 
-SELECT * FROM mhqstudentf;
+SELECT * FROM MHQStudentF;
+
+UPDATE MHQStudentF 
+SET 
+    `LastName` = 'Benjamin';
 
 -- Update a single column  
-UPDATE mhqstudentf 
+UPDATE MHQStudentF 
 SET 
     `LastName` = 'Benjamin'
 WHERE `ID` = 1;
 
 -- Update multiple column values
-UPDATE `mhq`.`mhqstudentf`
+UPDATE `mhq`.`MHQStudentF`
 SET
 `LastName` = 'Doe2',
 `FirstName` = 'John2' 
 WHERE `ID` = 1;
 
 -- We need to ensure all the column constrains are met, same as when using INSERT
--- Error Code: 1062. Duplicate entry '10' for key 'mhqstudentf.PRIMARY'
-UPDATE `mhq`.`mhqstudentf`
+-- Error Code: 1062. Duplicate entry '10' for key 'MHQStudentF.PRIMARY'
+UPDATE `mhq`.`MHQStudentF`
 SET
 `ID` =  3
 WHERE `ID` = 10;
@@ -37,7 +41,7 @@ WHERE `ID` = 10;
 -- you tried to update a table without a WHERE that uses a KEY column.  
 -- To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
 -- You need to toggle safemode to make it work in MySQL Workbench
-UPDATE `mhq`.`mhqstudentf`
+UPDATE `mhq`.`MHQStudentF`
 SET
 `LastName` = 'Benjamin',
 `FirstName` = 'Sebin';
