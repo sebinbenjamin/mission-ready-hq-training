@@ -32,10 +32,6 @@ function main(meaning) {
   }
 }
 
-function login(request, onSuccess) {
-  // ...
-}
-
 // JSHint: Too many parameters per function (4).
 function logout(request, isManual, whereAmI, onSuccess) {
   // ...

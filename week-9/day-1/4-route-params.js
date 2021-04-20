@@ -11,7 +11,7 @@ teacherRouter.get('/', (req, res) => {
   });
 });
 
-// /teacher/add
+// localhost:4000/teacher/add
 teacherRouter.post('/add', (req, res) => {
   console.log('POST called');
   // Express automatically sets the content type header as JSON
@@ -19,7 +19,7 @@ teacherRouter.post('/add', (req, res) => {
 });
 
 // Using Route Params
-// /teacher/delete/56/color/green => id_no is 56 & color is green
+// localhost:4000/teacher/delete/56/color/green => id_no is 56 & color is green
 teacherRouter.delete('/del/:id_no/color/:color_code', (req, res) => {
   const { id_no, color_code } = req.params;
 

@@ -11,6 +11,7 @@ app.use(cors());
 //   res.send('Hello World');
 // };
 
+// localhost:4000/hello
 app.get('/hello', helloController);
 
 // const carController = (req, res) => {

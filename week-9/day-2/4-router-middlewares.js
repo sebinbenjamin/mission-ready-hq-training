@@ -23,7 +23,7 @@ const demoLogger = (req, res, next) => {
 };
 
 // app.use('/student', demoLogger);
-
+ 
 // We are adding the studentRouter to a specific path
 // so, '/student/current' and '/student/past' are listened to here
 // app.use('/student', studentRouter);

@@ -3,7 +3,7 @@ const studentRouter = express.Router();
 
 // A unique Endpoint => (Route path + a http Method) combination is unique.
 
-// starts with a '/student'
+// starts with a '/student' => localhost:4000/student/car?
 // ? - means that the preceding character is optional
 // /cars? => '/car' and '/cars' are matching
 studentRouter.get('/cars?', (req, res) => {
@@ -15,7 +15,7 @@ studentRouter.get('/cars?', (req, res) => {
   });
 });
 
-// starts with a '/student'
+// starts with a '/student' => localhost:4000/student/hello
 // + means "1 or more" copy of the previous character
 // /hell+o => hello, helllo, hellllo
 studentRouter.post('/hell+o', (req, res) => {
@@ -45,4 +45,5 @@ studentRouter.delete('/wor(l)?d', (req, res) => {
   res.send('Matching the * path - delete called');
 });
 
+// To be used in the main app file/module.
 module.exports = studentRouter;

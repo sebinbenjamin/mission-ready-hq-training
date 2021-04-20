@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
+// Routes are imported to be used in the main file (this one)
 const studentRouter = require('./3-router-instance');
 const teacherRouter = require('./4-route-params');
 
