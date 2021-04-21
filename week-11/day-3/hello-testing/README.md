@@ -1,3 +1,7 @@
+## Running unit tests
+
+Do an `npm run test` to run unit tests in the project.
+
 ## Eslint Setup
 
 Do an `npm install --save-dev eslint-plugin-react`.
